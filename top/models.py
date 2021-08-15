@@ -7,3 +7,11 @@ class MainMenu(models.Model):
 
     def __str__(self):
         return self.name
+
+class Person(models.Model):
+    name = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='images',blank=True, null=True)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.name
