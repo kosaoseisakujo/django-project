@@ -6,5 +6,6 @@ def some_processor(request: HttpRequest):
     # dic = create_dict()
     # return dic
     return {
-        'some_test_msg': '後から効いてくるスパイス'
+        'IMAGE_PATH': 'https://cosaoyuji.s3.ap-northeast-1.amazonaws.com/images/',
+        'TEST': 'TEST',
     }
