@@ -12,3 +12,9 @@ def post_list(request):
         'persons': persons,
     }
     return render(request, 'top/post_list.html', context)
+
+def news(request):
+    context ={
+
+    }
+    return render(request, 'top/news.html', context)
