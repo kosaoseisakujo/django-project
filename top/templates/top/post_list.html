@@ -1,6 +1,7 @@
 {% extends 'top/base.html' %}
 {% load static %}
 {% load link_tag %}
+{% load humanize %}
 {% block content %}
     <div class="site-wrap">
         <div class="site-navbar mt-4">
@@ -102,45 +103,18 @@
                 </div>
             </div>
             <div class="row">
+                {% for apartment in apartments %}
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" class="unit-9">
                         <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_1.jpg');"></div>
                         <div class="unit-9-content">
-                            <h2>Nashville</h2>
-                            <span>$130/night</span>
+                            <h2>{{ apartment.region }}</h2>
+                            <span>¥{{ apartment.cost|intcomma }}/night</span>
                             <!-- <span>with Wendy Matos</span> -->
                         </div>
                     </a>
                 </div>
-
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#" class="unit-9">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_2.jpg');"></div>
-                        <div class="unit-9-content">
-                            <h2>Baltimore</h2>
-                            <span>$230/night</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#" class="unit-9">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_3.jpg');"></div>
-                        <div class="unit-9-content">
-                            <h2>Austin</h2>
-                            <span>$130/night</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#" class="unit-9">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_4.jpg');"></div>
-                        <div class="unit-9-content">
-                            <h2>Atlanta</h2>
-                            <span>$150/night</span>
-                        </div>
-                    </a>
-                </div>
-
+                {% endfor %}
                 <div class="col-md-12 text-center mt-5" data-aos="fade-up">
                     <a href="#" class="btn btn-primary">Browse All Apartments</a>
                 </div>
