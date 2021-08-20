@@ -23,6 +23,12 @@ class Apartment(models.Model):
     )
     image = models.ImageField(upload_to='images',blank=True, null=True)
     infomation = models.TextField()
+    features_flag = models.IntegerField(
+        verbose_name='',
+        default=0,
+        validators=[MinValueValidator(0),
+                    MaxValueValidator(1)]
+    )
 
     def __str__(self):
         return self.name
