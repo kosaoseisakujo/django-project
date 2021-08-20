@@ -131,35 +131,37 @@
             <div class="row">
                 <div class="site-section-heading text-center mb-5 w-border col-md-6 mx-auto" data-aos="fade-up">
                     <h2 class="mb-5">Featured Apartments</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt officia, error reiciendis ab quod?</p>
+                    <p>CosaoApartment.coが自信を持ってお勧めする短期宿泊施設のご案内です！
+
+                    </p>
                 </div>
             </div>
 
             <div class="site-block-retro d-block d-md-flex">
 
                 <a href="#" class="col1 unit-9 no-height" data-aos="fade-up" data-aos-delay="100">
-                    <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_2.jpg');"></div>
+                    <div class="image" style="background-image: url('{{ IMAGE_PATH_TEST }}{{ featured_apartments.0.image }}');"></div>
                     <div class="unit-9-content">
-                        <h2>Baltimore Apartment</h2>
-                        <span>$600/night</span>
+                        <h2>{{ featured_apartments.0.name }}</h2>
+                        <span>¥{{ featured_apartments.0.cost }}/night</span>
                     </div>
                 </a>
 
                 <div class="col2 ml-auto">
 
                     <a href="#" class="col2-row1 unit-9 no-height" data-aos="fade-up" data-aos-delay="200">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_3.jpg');"></div>
+                        <div class="image" style="background-image: url('{{ IMAGE_PATH_TEST }}{{ featured_apartments.1.image }}');"></div>
                         <div class="unit-9-content">
-                            <h2>Austin Apartment</h2>
-                            <span>$290/night</span>
+                            <h2>{{ featured_apartments.1.name }}</h2>
+                            <span>¥{{ featured_apartments.0.cost }}/night</span>
                         </div>
                     </a>
 
                     <a href="#" class="col2-row2 unit-9 no-height" data-aos="fade-up" data-aos-delay="300">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_1.jpg');"></div>
+                        <div class="image" style="background-image: url('{{ IMAGE_PATH_TEST }}{{ featured_apartments.2.image }}');"></div>
                         <div class="unit-9-content">
-                            <h2>Atlanta Apartment</h2>
-                            <span>$1,290/night</span>
+                            <h2>{{ featured_apartments.2.name }}</h2>
+                            <span>¥{{ featured_apartments.2.cost }}/night</span>
                         </div>
                     </a>
 
