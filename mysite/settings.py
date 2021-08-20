@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'top.apps.TopConfig',
     'news.apps.NewsConfig',
+    'apartment.apps.ApartmentConfig',
 ]
 
 MIDDLEWARE = [
