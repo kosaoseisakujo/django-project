@@ -106,7 +106,7 @@
                 {% for apartment in apartments %}
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" class="unit-9">
-                        <div class="image" style="background-image: url('{{ IMAGE_PATH }}img_1.jpg');"></div>
+                        <div class="image" style="background-image: url('{{ IMAGE_PATH_TEST }}{{ apartment.image }}');"></div>
                         <div class="unit-9-content">
                             <h2>{{ apartment.region }}</h2>
                             <span>¥{{ apartment.cost|intcomma }}/night</span>
@@ -206,34 +206,19 @@
             <div class="row">
                 <div class="site-section-heading text-center mb-5 w-border col-md-6 mx-auto" data-aos="fade-up">
                     <h2 class="mb-5">News &amp; Events</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt officia, error reiciendis ab quod?</p>
+                    {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, fugit nam obcaecati fuga itaque deserunt officia, error reiciendis ab quod?</p> {% endcomment %}
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-                    <a href="single.html"><img src="{{ IMAGE_PATH }}img_4.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-                        <h2 class="h5 text-black mb-3"><a href="single.html">Fugit nam obcaecati fuga itaque</a></h2>
-
+                {%for notice in notices %}
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+                        <a href="single.html"><img src="{{ IMAGE_PATH_TEST }}{{ notice.image }}" alt="notice.title" class="img-fluid"></a>
+                        <div class="p-4 bg-white">
+                            <span class="d-block text-secondary small text-uppercase">{{ notice.created_date}}</span>
+                            <h2 class="h5 text-black mb-3"><a href="single.html">{{ notice.title }}</a></h2>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-                    <a href="single.html"><img src="{{ IMAGE_PATH }}img_2.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-                        <h2 class="h5 text-black mb-3"><a href="single.html">Fugit nam obcaecati fuga itaque</a></h2>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <a href="single.html"><img src="{{ IMAGE_PATH }}img_3.jpg" alt="Image" class="img-fluid"></a>
-                    <div class="p-4 bg-white">
-                        <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-                        <h2 class="h5 text-black mb-3"><a href="single.html">Fugit nam obcaecati fuga itaque</a></h2>
-
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
