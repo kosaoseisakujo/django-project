@@ -1,4 +1,4 @@
-from top.models import MainMenu, Person
+from top.models import Menu, Person
 from apartment.models import  Apartment
 from news.models import Notice
 from django.shortcuts import render
@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 def post_list(request):
     # メインメニュー
-    main_menus = MainMenu.objects.all()
+    main_menus = Menu.objects.filter(main_flag=1)
     # Person
     persons = Person.objects.all()
     # アパート情報
