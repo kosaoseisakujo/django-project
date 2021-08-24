@@ -12,7 +12,7 @@ def post_list(request):
     # アパート情報
     apartments = Apartment.objects.all()
     featured_apartments = Apartment.objects.filter(features_flag=1)
-    main_apartment = Apartment.objects.get(main_flag=1)
+    main_apartment = Apartment.objects.filter(main_flag=1)
     print(main_apartment)
     # ニュース&イベント
     notices = Notice.objects.all()[:3]
