@@ -110,18 +110,11 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Apartments</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Featured Apartment</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Membership</a></li>
+                                {% for footer_menu in FOOTER_MENU %}
+                                    <li>
+                                        <a href="{{ footer_menu.url}}">{{footer_menu.name}}</a>
+                                    </li>
+                                {% endfor %}
                         </ul>
                     </div>
                 </div>
